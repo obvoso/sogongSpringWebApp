@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.catholic.mapper.AccountMapper">
+
+
+    <insert id="insertAccount" parameterType="Account">
+        INSERT INTO user
+        VALUES
+        (#{id}, #{password})
+    </insert>
+
+    <select id="selectAccount" parameterType="Account" resultType="Account">
+        select *
+        from user
+        where id = #{id}
+    </select>
+
+    <select id="searchAccount" resultType="Account">
+        select *
+        from user
+        order by id desc;
+    </select>
+</mapper>
